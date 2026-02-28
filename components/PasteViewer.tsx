@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { verifyPassword } from "@/app/actions";
 import MarkdownRenderer from "./MarkdownRenderer";
 import CopyButton from "./CopyButton";
+import ReportButton from "./ReportButton";
 import Link from "next/link";
 
 function formatDate(date: Date) {
@@ -239,6 +240,10 @@ export default function PasteViewer({
             <MarkdownRenderer content={content} />
           )
         )}
+      </div>
+
+      <div className="paste-footer">
+        <ReportButton pasteId={id} />
       </div>
     </div>
   );

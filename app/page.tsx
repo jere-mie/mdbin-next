@@ -1,4 +1,5 @@
 import Editor from "@/components/Editor";
+import AdminEasterEgg from "@/components/AdminEasterEgg";
 import Link from "next/link";
 
 export default function Home() {
@@ -14,7 +15,7 @@ export default function Home() {
         <Editor />
         <footer className="home-footer">
           <p>
-            Markdown with syntax highlighting · Optional password protection ·
+            Markdown with syntax highlighting · Optional <AdminEasterEgg /> protection ·
             Configurable expiration
           </p>
           <p className="footer-meta">
