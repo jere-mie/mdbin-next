@@ -1,34 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# mdbin
+
+A minimal, beautiful pastebin for Markdown. Paste or type markdown content and share it with others through a unique URL.
+
+## Features
+
+- **Markdown rendering** with full GFM support (tables, task lists, strikethrough)
+- **Syntax highlighting** for code blocks
+- **Password protection** - optionally lock pastes behind a password
+- **Configurable expiration** - set pastes to auto-expire after 1 hour, 1 day, 7 days, or 30 days
+- **Responsive design** - works on desktop and mobile
+- **Copy actions** - one-click copy for paste URL or raw content
+- **Source/preview toggle** - switch between rendered markdown and raw source
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org) (App Router)
+- [Tailwind CSS](https://tailwindcss.com)
+- [Drizzle ORM](https://orm.drizzle.team) with [Turso](https://turso.tech) (SQLite)
+- [react-markdown](https://github.com/remarkjs/react-markdown) + [rehype-highlight](https://github.com/rehypejs/rehype-highlight)
+- [bcryptjs](https://github.com/dcodeIO/bcrypt.js) for password hashing
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- A Turso database (or local SQLite file for development)
+
+### Setup
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/jere-mie/mdbin-next.git
+cd mdbin-next
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Copy the example env file and configure your database:
+
+```bash
+cp example.env .env
+```
+
+Edit `.env` with your Turso credentials (or use `file:local.db` for local development).
+
+4. Push the database schema:
+
+```bash
+npx drizzle-kit push
+```
+
+5. Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to start using mdbin.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-## Learn More
+The app can be deployed to any platform that supports Next.js (Vercel, Netlify, etc.). Make sure to set the `DB_URL` and `DB_AUTH_TOKEN` environment variables for your Turso database.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
