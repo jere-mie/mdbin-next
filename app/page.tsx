@@ -24,6 +24,10 @@ export default function Home() {
               GitHub
             </a>
             <span className="footer-sep">·</span>
+            <a href="https://jeremie.bornais.ca" target="_blank" rel="noopener noreferrer" className="footer-link" aria-label="Jeremie Bornais website">
+              Made by Jeremie Bornais
+            </a>
+            <span className="footer-sep">·</span>
             MIT License
           </p>
         </footer>
